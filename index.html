@@ -35,31 +35,52 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('/images/20260613_064510_from_deck.jpg');
+  background-image: url('/images/Background_IMG_20240122_073656_centered.jpg');
   min-height: 50%;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url("/images/20260613_071207_from_boat.jpg");
+  background-image: url("/images/BackgoundImage_IMG_20240205_113422.jpg");
   min-height: 300px;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url("/images/20260613_080337_another_cape.jpg");
+  background-image: url("/images/Background_20240816_192419.jpg");
   min-height: 300px;
 }
 
 /* 4th image (Contact) */
 .bgimg-4 {
-  background-image: url("/images/20260613_064419_accomodation.jpg");
+  background-image: url("/images/BackgoundImage_20260613_071207_from_boat.jpg");
   min-height: 300px;
 }
 
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
+
+.service-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-photo img{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.port-card img{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
 
 
 @media (min-width: 993px) {        
@@ -135,7 +156,7 @@ body, html {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+<div class="bgimg-1 w3-display-container" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
     <!-- <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span> -->
     <h1 class="w3-center w3-padding-large w3-wide w3-text-white w3-jumbo">UNIS</h1> 
@@ -147,7 +168,7 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">ABOUT US</h3>
   <!-- <p class="w3-center"><em>I love photography</em></p> -->
-  <p>UNIS Marine & Cargo Inspections provides independent survey and inspection services for shipowners, charterers, traders, P&I clubs, insurers and cargo interests.</p>
+  <p>UNIS Marine & Cargo Inspections provides independent survey services for shipowners, charterers, traders, P&I clubs, insurers and cargo interests.</p>
   <p>Our surveyors have extensive practical experience in marine cargo operations, including bulk cargoes, steel products, liquid cargoes and general cargoes.</p>
   <p>We focus on accurate reporting, fast response and professional support during loading, discharging and transportation operations.</p>
   <p>Based in Constanta, Romania.</p>
@@ -201,7 +222,8 @@ body, html {
 </div> -->
 
 <!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min" id="services">
+<!-- <div class="bgimg-2 w3-display-container w3-opacity-min" id="services"> -->
+<div class="bgimg-2 w3-display-container" id="services">
   <div class="w3-display-middle">    
     <h3 class="w3-center w3-xxlarge w3-text-white w3-wide">Services</h3>
   </div>
@@ -220,129 +242,130 @@ body, html {
         <button class="w3-button w3-round-xxlarge w3-blue" onclick="filterServices('investigation-inspection')">Investigations</button>
     </div>
     <!-- Cards For Survey Services -->
-    <div class="w3-row-padding w3-padding-32 w3-grayscale">
-        <div class="w3-col l4 m6 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+    <div class="w3-row-padding w3-padding-32">
+        <div class="w3-col l4 m6 w3-margin-bottom service-card marine-inspection" id="draught-survey-card">
+            <img src="/images/Draught_Survey_20260613_080809_small.jpg" loading="lazy" alt="Reading draught marks at the middle">
             <h3 class="ser">Draught Survey</h3>      
             <p class="service-description">Independent calculation of loaded or discharged cargo quantity by draught survey to minimize shortage-related risks.</p>
             <p><a href="services/draught-survey.html" class="w3-button w3-light-grey w3-block">Details</a></p>            
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="hatch-covers-sealing-card">
+            <img src="/images/Sealing_20251024_065438_small.jpg" loading="lazy" alt="Vessel's manhole sealed with a plastic numbered seal">
             <h3>Hatch Covers Sealing</h3>      
-            <p class="service-description">Sealing of weather deck openinings to protect the shipowners and cargo interests against shortage risks.</p>
+            <p class="service-description">Sealing of hatch covers and manholes to protect the shipowners and cargo interests against shortage risks.</p>
             <p><a href="services/hatch-covers-sealing.html" class="w3-button w3-light-grey w3-block">Details</a></p>                        
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="on-hire-bunker-survey-card">
+            <img src="/images/Bunker_Survey_IMG_20220220_132353_small.jpg" loading="lazy" alt="Measurements of fuel oil tank on main deck of bulk carrier">
             <h3>On-hire Bunker Survey</h3>      
-            <p class="service-description">On-hire or off-hire calculation of bunker quantities on board the vessel.</p>
+            <p class="service-description">On-hire or off-hire calculation of bunker quantities on board the vessel. Thorough measurements, reading gauges, and calculations.</p>
             <p><a href="services/bunker-survey.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="bunkering-survey-card">
+            <img src="/images/Bunkering_20250623_190437_small.jpg" loading="lazy" alt="Bunkering in progress, hoses connected">
             <h3>Bunkering Survey</h3>      
             <p class="service-description">Bunker survey on the supplied vessel and on the supplying barge during bunkering operations.</p>
             <p><a href="services/bunkering-survey.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="on-hire-condition-survey-card">
+            <img src="/images/On_hire_condition_DSCN1510-small.JPG" loading="lazy" alt="On-hire condition survey in progress. General view of forecastle deck and mooring arrangements">
             <h3>On-hire Conditon Survey</h3>      
             <p class="service-description">On-hire. or off-hire ispections of the vessel condition on delivery of into charter or off-hire inspections on re-delivery back to owners.</p>
             <p><a href="services/on-hire-condition.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="cargo-holds-inspection-card">
+            <img src="/images/Holds_Inspection_20240816_190337_small.jpg" loading="lazy" alt="John">
             <h3>Cargo Holds Inspection</h3>      
             <p class="service-description">Inspections of cargo holds for cleanliness and suitability for loading of the intended bulk cargo, as per the relevant standard.</p>
             <p><a href="services/cargo-holds-inspection.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="cargo-tanks-inspection-card">
+            <img src="/images/Tanks_IMG_20220908_151234_1_small.jpg" loading="lazy" alt="John">
             <h3>Cargo Tanks Inspection</h3>      
             <p class="service-description">Inspections of cargo tanks for cleanliness and suitability for loading of the intended liquid cargo.</p>
             <p><a href="services/cargo-tanks-inspection.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>    
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="hatch-covers-card">
+            <img src="/images/Hatches_DSCN0122-small.JPG" loading="lazy" alt="John">
             <h3>Hatch Covers</h3>      
             <p class="service-description">Inspections of vessels weather deck openings for apparent condition, maintenance status and watertight integrity.</p>
             <p><a href="services/hatch-covers.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="steel-preshipment-card">
+            <img src="/images/Preload_DSCN3647_small.JPG" loading="lazy" alt="John">
             <h3>Steel Pre-Shipment</h3>      
             <p class="service-description">Pre-shipment inspections of steel products, recommendation of remarks, loading supervision, stowage control.</p>
             <p><a href="services/steel-pre-loading.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="stock-inspection-card">
+            <img src="/images/Stocks_20260105_085647_small.jpg" loading="lazy" alt="John">
             <h3>Stock Inspection</h3>      
             <p class="service-description">Inspections of various kinds of cargoes at the storage facilities to confirm the presence, apparent condition and declared quantities.</p>
             <p><a href="services/stock-inspection.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="ships-condition-card">
+            <img src="/images/Ship_Condition_IMG_20230701_151500_small.jpg" loading="lazy" alt="John">
             <h3>Ships Condition</h3>      
             <p class="service-description">Pre-purchase or insurance surveys of vessels on behalf of P&I Clubs, insurers, owners in accordance with the agreed check lists.</p>
             <p><a href="services/ships-condition.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="monitoring-card">
+            <img src="/images/Monitoring_20251023_073617_small.jpg" loading="lazy" alt="John">
             <h3>Monitoring</h3>      
             <p class="service-description">Monitoring of loading and discharging operations of bulk cargoes for compliance with transshipment conditions.</p>
             <p><a href="services/monitoring.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card investigation-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card investigation-inspection" id="damage-survey-card">
+            <img src="/images/Damage_survey_20260320_141901_small.jpg" loading="lazy" alt="John">
             <h3>Damage Survey</h3>      
             <p class="service-description">Collecting evidences, investigations of maritime incidents, such as collisions, oil spills, groundings.</p>
             <p><a href="services/damage-survey.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>    
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="tally-count-card">
+            <img src="/images/Tally_DSCN1599_small.JPG" loading="lazy" alt="John">
             <h3>Tally Count</h3>      
             <p class="service-description">Organization of independent tally count of various kinds of steel products, bagged cargoes and general cargoes.</p>
             <p><a href="services/tally-count.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>    
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="containers-card">
+            <img src="/images/Containers_IMG_20231123_104348_small.jpg" loading="lazy" alt="John">
             <h3>Containers</h3>      
             <p class="service-description">Inspection of containers for apparent condition and ability to load intended cargo. Inspections after various accidents.</p>
             <p><a href="services/containers.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>    
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection"  id="frozen-cargoes-card">
+            <img src="/images/Frozen_IMG_20230831_132539_1_small.jpg" loading="lazy" alt="John">
             <h3>Frozen Cargoes</h3>      
             <p class="service-description">Inspections of perishable cargoes including bananas, fruits, fish, meat and other frozen products shipped in containers.</p>
             <p><a href="services/containers-frozen.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>    
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="bananas-card">
+            <img src="/images/Bananas_P1370265_small.JPG" loading="lazy" alt="John">
             <h3>Bananas</h3>      
             <p class="service-description">Inspections of perishable cargoes including bananas, fruits, fish, meat and other frozen products shipped in containers.</p>
             <p><a href="services/bananas.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>    
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="ullage-measurements-card">
+            <img src="/images/Ullage_20250314_113049_small.jpg" loading="lazy" alt="John">
             <h3>Ullage Measurements</h3>      
             <p class="service-description">Ullage measurements of the vessel or shore tanks in order to determination of quantities of the liquid cargo.</p>
             <p><a href="services/ullages.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>    
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="weight-control-card">
+            <img src="/images/Weighing_20250318_183200_small.jpg" loading="lazy" alt="John">
             <h3>Weight Control</h3>      
             <p class="service-description">Control and verification of cargo weighing operations with trucks, railway wagons, barges or silo during loading or discharging.</p>
             <p><a href="services/weight-control.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="project-cargoes-card">
+            <img src="/images/Ptoject_cargoe_DSCN2779_small.JPG" loading="lazy" alt="John">
             <h3>Project Cargoes</h3>      
             <p class="service-description">Inspection and supervision of project cargoes, such as heavy machinery, wind turbine components, vehicles and trucks.</p>
             <p><a href="services/project-cargoes.html" class="w3-button w3-light-grey w3-block">Details</a></p>
         </div>
-        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection">
-            <img src="/images/20260613_064510_from_deck.jpg" loading="lazy" alt="John" style="width:100%">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="petroleum-products-card">
+            <img src="/images/Petroleum_Products_IMG_20230116_160852_1_small.jpg" loading="lazy" alt="John">
             <h3>Petroleum Products</h3>      
             <p class="service-description">Inspection and supervision of petroleum products, such as diesel, petrol. Ullage measurements and tanks inspection.</p>
             <p><a href="services/petroleum-products.html" class="w3-button w3-light-grey w3-block">Details</a></p>
@@ -361,7 +384,7 @@ body, html {
 </div>
 
 <!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min" id="ports">
+<div class="bgimg-3 w3-display-container" id="ports">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">Ports</span>
   </div>
@@ -382,55 +405,55 @@ body, html {
         <button class="w3-button w3-round-xxlarge w3-blue" onclick="filterPorts('moldova')">Moldova</button>
     </div>
 
-    <div class="w3-row-padding w3-padding-32 w3-grayscale">
+    <div class="w3-row-padding w3-padding-32">
         <div class="w3-col l4 m6 w3-margin-bottom port-card romania">
             <div class="w3-light-grey">
-                <img src="/images/20260613_064510_from_deck.jpg" alt="John" style="width:100%">
+                <img src="/images/Constanta_20240816_163002_small.jpg" alt="Vessel berthed at Constanta Port" style="width:100%">
                 <h3 class="w3-container">Constanta</h3>
             </div>
         </div>
         <div class="w3-col l4 m6 w3-margin-bottom port-card romania">
             <div class="w3-light-grey">
-                <img src="/images/20260613_064510_from_deck.jpg" alt="John" style="width:100%">
+                <img src="/images/Midia_20260323_131957_small.jpg" alt="Loading of the vessel at Midia port" style="width:100%">
                 <h3 class="w3-container">Midia</h3>
             </div>
         </div>
+        <div class="w3-col l4 m6 w3-margin-bottom port-card moldova">
+            <div class="w3-light-grey">
+                <img src="/images/Giurgiulesti_20241109_123250_small.jpg" alt="John" style="width:100%">
+                <h3 class="w3-container">Giurgiulesti</h3>
+            </div>
+        </div>
         <div class="w3-col l4 m6 w3-margin-bottom port-card romania">
             <div class="w3-light-grey">
-                <img src="/images/20260613_064510_from_deck.jpg" alt="John" style="width:100%">
+                <img src="/images/Braila_20250706_170838_small.jpg" alt="Tanker at Braila port" style="width:100%">
                 <h3 class="w3-container">Braila</h3>
             </div>
         </div>
-        <div class="w3-col l4 m6 w3-margin-bottom port-card romania">
+        <!-- <div class="w3-col l4 m6 w3-margin-bottom port-card romania">
             <div class="w3-light-grey">
-                <img src="/images/20260613_064510_from_deck.jpg" alt="John" style="width:100%">
+                <img src="/images/Galati.jpg" alt="John" style="width:100%">
                 <h3 class="w3-container">Galati</h3>
             </div>
-        </div>
-        <div class="w3-col l4 m6 w3-margin-bottom port-card romania">
+        </div> -->
+        <!-- <div class="w3-col l4 m6 w3-margin-bottom port-card romania">
             <div class="w3-light-grey">
-                <img src="/images/20260613_064510_from_deck.jpg" alt="John" style="width:100%">
+                <img src="/images/Varna_20250419_193057_small.jpg" alt="John" style="width:100%">
                 <h3 class="w3-container">Tulcea</h3>
             </div>
-        </div>
+        </div> -->
         <div class="w3-col l4 m6 w3-margin-bottom port-card bulgaria">
             <div class="w3-light-grey">
-                <img src="/images/20260613_064510_from_deck.jpg" alt="John" style="width:100%">
+                <img src="/images/Varna_20250419_193057_small.jpg" alt="John" style="width:100%">
                 <h3 class="w3-container">Varna</h3>
             </div>
         </div>
         <div class="w3-col l4 m6 w3-margin-bottom port-card bulgaria">
             <div class="w3-light-grey">
-                <img src="/images/20260613_064510_from_deck.jpg" alt="John" style="width:100%">
+                <img src="/images/Balchik_20251012_081713_small.jpg" alt="Vessel berthed at Port Balchik" style="width:100%">
                 <h3 class="w3-container">Balchik</h3>
             </div>
-        </div>
-        <div class="w3-col l4 m6 w3-margin-bottom port-card moldova">
-            <div class="w3-light-grey">
-                <img src="/images/20260613_064510_from_deck.jpg" alt="John" style="width:100%">
-                <h3 class="w3-container">Giurgiulesti</h3>
-            </div>
-        </div>
+        </div>        
     </div>   
 </div>
 
@@ -449,24 +472,28 @@ body, html {
     <div class="w3-row-padding w3-padding-32">
         <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
         <div class="w3-row-padding w3-center w3-section">
-            <div class="w3-col m3 s6 w3-margin-bottom">
-                <img src="/images-gallery/20251024_064410.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+            <div class="w3-col m3 s6 w3-margin-bottom gallery-photo">
+                <img src="/images/Hatches_DSCN0122.JPG" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
             </div>
-            <div class="w3-col m3 s6 w3-margin-bottom">
-                <img src="/images-gallery/20251024_064436.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-            </div><div class="w3-col m3 s6 w3-margin-bottom">
-                <img src="/images-gallery/20251024_064449.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-            </div><div class="w3-col m3 s6 w3-margin-bottom">
-                <img src="/images-gallery/20251024_064459.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-            </div><div class="w3-col m3 s6 w3-margin-bottom">
-                <img src="/images-gallery/20251024_064523.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-            </div><div class="w3-col m3 s6 w3-margin-bottom">
-                <img src="/images-gallery/20251024_064533.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-            </div><div class="w3-col m3 s6 w3-margin-bottom">
-                <img src="/images-gallery/20251024_064608.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+            <div class="w3-col m3 s6 w3-margin-bottom gallery-photo">
+                <img src="/images/Holds_Inspection_20240816_190548.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
             </div>
-            <div class="w3-col m3 s6 w3-margin-bottom">
-                <img src="/images-gallery/20251024_064640.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+            <div class="w3-col m3 s6 w3-margin-bottom gallery-photo">
+                <img src="/images/Sealing_20251024_064533.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+            </div>
+            <div class="w3-col m3 s6 w3-margin-bottom gallery-photo">
+                <img src="/images/Ship_Condition_20250516_162135.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+            </div>
+            <div class="w3-col m3 s6 w3-margin-bottom gallery-photo">
+                <img src="/images/Preload_DSCN3471.JPG" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+            </div>
+            <div class="w3-col m3 s6 w3-margin-bottom gallery-photo">
+                <img src="/images/Draught_Survey_20260320_142038.jpg" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+            </div><div class="w3-col m3 s6 w3-margin-bottom">
+                <img src="/images/Preload_Preload_DSCN3433.JPG" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+            </div>
+            <div class="w3-col m3 s6 w3-margin-bottom gallery-photo">
+                <img src="/images/Bananas_DSCN3337.JPG" loading="lazy" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
             </div>                        
             <div class="w3-center">
                 <a href="gallery.html#home" class="w3-button w3-blue w3-round-xxlarge"style="margin-top:64px"><i class="fa fa-picture-o"></i> View Gallery</a>
@@ -477,7 +504,7 @@ body, html {
 </div>
 
 <!-- 4th Parallax Image with Contact Text -->
-<div class="bgimg-4 w3-display-container w3-opacity-min" id="contact">
+<div class="bgimg-4 w3-display-container" id="contact">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">Contacts</span>
   </div>
@@ -595,6 +622,7 @@ function filterPorts(country){
         }
     }
 }
+
 //Used to choose service between All, and marine or cargo inspection
 function filterServices(serviceName){
     var services = document.getElementsByClassName("service-card");
