@@ -537,14 +537,74 @@ body, html {
         </div>
     </div>
     <div class="w3-col l6 w3-container">
-        <form action="/action_page.php" target="_blank">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Comment">            
-            <button class="w3-button w3-blue w3-round-xxlarge w3-right w3-section" type="submit">
-            <i class="fa fa-paper-plane"></i> SEND REQUEST
-            </button>
+        <form id="contactForm">
+            <input 
+                class="w3-input w3-border" 
+                type="text" 
+                placeholder="Name"
+                required 
+                name="senderName"
+                maxlength="100"
+                autocomplete="name"
+            >
+            <input 
+                class="w3-input w3-section w3-border" 
+                type="email" 
+                placeholder="Email" 
+                required 
+                name="senderEmail"
+                maxlength="200"
+                autocomplete="email"
+            >
+            <input 
+                class="w3-input w3-section w3-border" 
+                type="text" 
+                placeholder="Subject" 
+                required 
+                name="subject"
+                maxlength="200"
+            >
+            <textarea            
+                id="body"
+                class="w3-input w3-section w3-border"                 
+                placeholder="Message" 
+                required
+                maxlength="5000"
+                rows="3"
+                name="body"                
+            ></textarea>
+            <div class="w3-row">
+                <div class="w3-small w3-right">
+                    <span id="bodyCounter">0</span> / 5000
+                </div>           
+            </div>
+            
+
+
+            <div
+              id="contactSuccess"
+              class="w3-panel w3-padding-16 w3-pale-green w3-border w3-border-green"
+              role="status"
+              style="display:none"
+              >
+            </div>
+            <div
+              id="contactError"
+              class="w3-panel w3-padding-16 w3-pale-red w3-border w3-border-red"
+              role="alert"
+              style="display: none;">
+            </div>
+            
+            <div class="w3-center">
+                <button 
+                    id="contactSubmitButton"
+                    class="w3-button w3-blue w3-round-xxlarge w3-section" 
+                    type="submit"
+                >
+                <i class="fa fa-paper-plane"></i> SEND REQUEST
+                </button>
+            </div>
+            
         </form>
     </div>
 
@@ -635,6 +695,101 @@ function filterServices(serviceName){
         }
     }
 }
+
+// Contact form
+  const contactForm = document.getElementById("contactForm");
+  const contactSubmitButton = document.getElementById("contactSubmitButton");  
+  const contactSuccess = document.getElementById("contactSuccess");
+  const contactError = document.getElementById("contactError");
+
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    hideContactMessages();
+    setContactSubmitting(true);
+
+    const formData = new FormData(contactForm);
+
+    const payload = {
+      appKey: "unis-inspections",
+      senderName: formData.get("senderName")?.trim() ?? "",
+      senderEmail: formData.get("senderEmail")?.trim() ?? "",
+      subject: formData.get("subject")?.trim() ?? "",
+      body: formData.get("body")?.trim() ?? ""
+    };
+
+    try {
+      const response = await fetch(
+        "https://contact-form-api.zalizko.site/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      const text = await response.text();
+      const result = text ? tryParseJson(text) : null;
+
+      if (!response.ok) {
+        const message =
+          result?.message ||
+          result?.error ||
+          result?.title ||
+          (typeof result === "string" ? result : "") ||
+          `Failed to send the message. HTTP ${response.status}`;
+
+        throw new Error(message);
+      }
+
+      contactSuccess.textContent =
+        result?.message || "Thank you. Your enquiry has been sent successfully.";
+
+      contactSuccess.style.display = "block";
+      contactForm.reset();
+      bodyCounter.textContent = "0";
+      
+    } catch (error) {
+      contactError.textContent = error.message;
+      contactError.style.display = "block";
+
+    } finally {
+      setContactSubmitting(false);
+    }
+  });
+
+  // Contat Form helper
+  function setContactSubmitting(isSubmitting) {
+    contactSubmitButton.disabled = isSubmitting;    
+  }
+
+  // Contat Form helper
+  function hideContactMessages() {    
+    contactSuccess.style.display = "none";
+    contactError.style.display = "none";
+    contactSuccess.textContent = "";
+    contactError.textContent = "";
+  }
+
+  // Contact Form helper
+  function tryParseJson(text) {
+    try {
+      return JSON.parse(text);
+    } catch {
+      return text;
+    }
+  }
+
+  // Contact Form symbol counter
+  const body = document.getElementById("body");
+  const bodyCounter = document.getElementById("bodyCounter");
+
+  body.addEventListener("input", function () {
+    bodyCounter.textContent = body.value.length;
+  });
+
 </script>
 
 </body>
