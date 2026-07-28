@@ -99,6 +99,19 @@ html {
     scroll-behavior: smooth;
 }
 
+#toTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    z-index: 999;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+#toTop:hover {
+    opacity: 1;
+}
+
 
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -642,6 +655,11 @@ html {
   <p class="w3-small">&copy; 2026 UNIS Marine & Cargo Inspections</p>
   <!-- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
 </footer>
+
+<!-- To Top Button -->
+<a href="#home" id="toTop" class="w3-button w3-blue w3-round-xxlarge">
+    <i class="fa fa-arrow-up"></i>
+</a>
  
 <script>
 // Modal Image Gallery
@@ -792,6 +810,17 @@ function filterServices(serviceName){
   body.addEventListener("input", function () {
     bodyCounter.textContent = body.value.length;
   });
+
+  // To the top floating button
+  window.addEventListener("scroll", function () {
+    const button = document.getElementById("toTop");
+    
+        if (window.scrollY > 300) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    });
 
 </script>
 
