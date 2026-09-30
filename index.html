@@ -272,6 +272,41 @@
                                 "@type": "Service",
                                 "name": "Weight Control"
                             }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Vessel Cleaning & Maintenance"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Cargo Hold Cleaning"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Cargo Tank Cleaning"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Ballast Tank Cleaning"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Deck Cleaning"
+                            }
                         }
                     ]            
                 },
@@ -298,7 +333,16 @@
                     "Banana Inspection",
                     "Ullage Measurements",
                     "Weight Control",
-                    "Project Cargo Inspections"
+                    "Project Cargo Inspections",
+                    "Cargo Hold Cleaning",
+                    "Cargo Tank Cleaning",
+                    "Ballast Tank Cleaning",
+                    "Deck Cleaning",
+                    "Vessel Cleaning",
+                    "Vessel Maintenance",
+                    "Rust Removal",
+                    "Surface Preparation",
+                    "Painting"
                 ],
                 "sameAs": [
                     "https://www.linkedin.com/company/unis-marine-cargo-inspections/"
@@ -378,6 +422,13 @@
         .w3-hover-opacity {cursor: pointer;}
 
         .service-card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cleaning-maintenance-card img {
             width: 100%;
             aspect-ratio: 16 / 9;
             object-fit: cover;
@@ -511,11 +562,10 @@
         </h1>
     
     <!-- <p class="w3-center"><em>I love photography</em></p> -->
-    <p>UNIS Marine & Cargo Inspections provides independent marine and cargo survey services in Constanta, Romania, and nearby Black Sea ports for shipowners, charterers, traders, P&I clubs, insurers and cargo interests.</p>
-    <!-- <p>Our surveyors have extensive experience in marine and cargo inspections, including bulk cargoes, liquid cargoes, steel products, and general cargoes.</p> -->
+    <p>UNIS Marine & Cargo Inspections provides independent marine and cargo survey services in Constanta, Romania, and nearby Black Sea ports for shipowners, charterers, P&I clubs, insurers and cargo interests.</p>    
     <p>Our services include draught surveys, bunker surveys, condition surveys, damage surveys, cargo inspections, sealing and unsealing of cargo holds and containers, tally count and other marine and cargo surveys.</p>
     <p>We also arrange cargo hold, cargo tank, ballast tank cleaning, vessel cleaning and maintenance, including washing, rust removal, surface preparation and painting.</p>
-    <p>We focus on accurate reporting, prompt response and professional support throughout every stage of the inspection process.</p>
+    <p>Services are available in Romania, Bulgaria and other ports by request.</p>
     <!-- <p>Based in Constanta, Romania.</p> -->
 
     </div>
@@ -567,8 +617,8 @@
             </div>
             <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="on-hire-condition-survey-card">
                 <img src="https://hel1.your-objectstorage.com/images-media/unis/On_hire_condition_DSCN1510-small.JPG" loading="lazy" alt="On-hire condition inspection. Forecastle deck and mooring arrangements">
-                <h3>On-hire Conditon Survey</h3>      
-                <p class="service-description">On-hire or off-hire inspections of the vessel condition on delivery of into charter or off-hire inspections on re-delivery back to owners.</p>
+                <h3>On-hire Condition Survey</h3>      
+                <p class="service-description">On-hire or off-hire inspections of the vessel condition on delivery into charter or off-hire inspections on re-delivery back to owners.</p>
                 <p><a href="services/on-hire-condition.html#on-hire-condition-survey-description-section" class="w3-button w3-light-grey w3-block">Details</a></p>
             </div>
             <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="cargo-holds-inspection-card">
@@ -616,7 +666,7 @@
             <div class="w3-col l4 m6 s12 w3-margin-bottom service-card investigation-inspection" id="damage-survey-card">
                 <img src="https://hel1.your-objectstorage.com/images-media/unis/Damage_survey_20260320_141901_small.jpg" loading="lazy" alt="Damage survey. View of damaged vessel bow">
                 <h3>Damage Survey</h3>      
-                <p class="service-description">Collecting evidences, investigations of maritime incidents, such as collisions, oil spills, groundings.</p>
+                <p class="service-description">Collecting evidence, investigations of maritime incidents, such as collisions, oil spills, groundings.</p>
                 <p><a href="services/damage-survey.html#damage-survey-description-section" class="w3-button w3-light-grey w3-block">Details</a></p>
             </div>    
             <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="tally-count-card">
@@ -646,7 +696,7 @@
             <div class="w3-col l4 m6 s12 w3-margin-bottom service-card marine-inspection" id="ullage-measurements-card">
                 <img src="https://hel1.your-objectstorage.com/images-media/unis/Ullage_20250314_113049_small.jpg" loading="lazy" alt="Ullage measurements of tank on board the vessel">
                 <h3>Ullage Measurements</h3>      
-                <p class="service-description">Ullage measurements of the vessel or shore tanks in order to determination of quantities of the liquid cargo.</p>
+                <p class="service-description">Ullage measurements of the vessel or shore tanks in order to determine quantities of the liquid cargo.</p>
                 <p><a href="services/ullages.html#ullage-measurements-description-section" class="w3-button w3-light-grey w3-block">Details</a></p>
             </div>    
             <div class="w3-col l4 m6 s12 w3-margin-bottom service-card cargo-inspection" id="weight-control-card">
@@ -787,17 +837,17 @@
 
             <!-- Cards for Cleaning & Maintenance -->
             <div class="w3-row-padding w3-padding-16">
-                <div class="w3-col l6 m6 w3-margin-bottom service-card marine-inspection" id="hold-tank-cleaning-card">
+                <div class="w3-col l6 m6 w3-margin-bottom cleaning-maintenance-card marine-inspection" id="hold-tank-cleaning-card">
                     <img src="https://hel1.your-objectstorage.com/images-media/unis/cargo-hold-cleaning-21.jpg" loading="lazy" alt="Cargo hold washing">
                     <h3 class="ser">Cargo Hold & Tank Cleaning</h3>      
                     <p class="cleaning-description">Cleaning and washing of cargo holds and cargo tanks after discharge and preparation for the next intended cargo.</p>
                     <p><a href="services/hold-tank-cleaning.html#hold-tank-cleaning-description-section" class="w3-button w3-light-grey w3-block">Details</a></p>            
                 </div>
-                <div class="w3-col l6 m6 w3-margin-bottom service-card marine-inspection" id="vessel-cleaning-maintenance-card">
-                    <img src="https://hel1.your-objectstorage.com/images-media/unis/cleaning-decks-13s.jpg" loading="lazy" alt="Reading draught marks at the middle">
+                <div class="w3-col l6 m6 w3-margin-bottom cleaning-maintenance-card marine-inspection" id="vessel-cleaning-maintenance-card">
+                    <img src="https://hel1.your-objectstorage.com/images-media/unis/cleaning-decks-13s.jpg" loading="lazy" alt="Cleaning of the vessel main deck">
                     <h3 class="ser">Vessel Cleaning & Maintenance</h3>      
                     <p class="cleaning-description">Cleaning, rust removal, surface preparation and painting of cargo holds, cargo tanks, ballast tanks, decks and other accessible vessel areas.</p>
-                    <p><a href="services/draught-survey.html#draught-survey-description-section" class="w3-button w3-light-grey w3-block">Details</a></p>            
+                    <p><a href="services/vessel-cleaning-maintenance.html#vessel-cleaning-description-section" class="w3-button w3-light-grey w3-block">Details</a></p>            
                 </div>
             </div>
         </div>
@@ -884,18 +934,17 @@
                 <br>
 
             </div>
-            <div class="w3-large w3-margin-bottom">
+            <div class="w3-large w3-margin-bottom">                
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193612.53530245656!2d28.465199346882063!3d44.18092428459877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40bae54a64345229%3A0x637be1cd3e654850!2sConstan%C8%9Ba%2C%20Romania!5e1!3m2!1sen!2snl!4v1781526482338!5m2!1sen!2snl" 
-                    width=100%
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d183001.34047168237!2d28.465200448885792!3d44.219505998453386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa1c9ae67ca2361b5%3A0xd6729ad9c74960!2sUNIS%20Marine%20%26%20Cargo%20Inspections!5e0!3m2!1sru!2sro!4v1790778758403!5m2!1sru!2sro" 
+                    width="100%" 
                     height="250" 
                     style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                >
+                    referrerpolicy="strict-origin-when-cross-origin">
                 </iframe>
-            </div>
+            </div>            
         </div>
         <div class="w3-col l6 w3-container">
             <h3>Send an enquiry</h3>
